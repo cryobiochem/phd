@@ -7,6 +7,7 @@ import altair as alt
 from datetime import time, datetime # to simulate a real time data, time loop
 
 # https://blog.streamlit.io/how-to-build-a-real-time-live-dashboard-with-streamlit/
+# https://30days.streamlit.app/?challenge=Day9
 
 st.set_page_config(
     page_title="Cryobiophysics by B. M. Guerreiro",
@@ -14,7 +15,7 @@ st.set_page_config(
     #layout="wide",
 )
 
-st.title("Cryobiophysics")
+st.title("🧊 Cryobiophysics")
 
 
 
