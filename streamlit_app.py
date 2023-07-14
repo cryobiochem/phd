@@ -29,6 +29,8 @@ st.write('The critical radius $r^*$ is the checkpoint at which an embryo undergo
 
 st.latex(r'r*= \frac{2\gamma_SL}{∆G_v}')
 
+st.write('*insert graph w/ sliders here*')
+
 # Slider
 st.subheader('Monomer composition')
 
