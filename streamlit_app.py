@@ -3,7 +3,6 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 from datetime import time, datetime
-import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
 st.header('Digital Appendix')
