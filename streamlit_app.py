@@ -1,9 +1,22 @@
-import numpy as np
-import altair as alt
-import pandas as pd
-import streamlit as st
-from datetime import time, datetime
+import streamlit as st  # 🎈 data web app development
+import numpy as np  # generate numbers for functions
+import pandas as pd  # read csv, df manipulation
+import plotly.express as px  # interactive charts
 import plotly.graph_objects as go
+import altair as alt
+from datetime import time, datetime # to simulate a real time data, time loop
+
+# https://blog.streamlit.io/how-to-build-a-real-time-live-dashboard-with-streamlit/
+
+st.set_page_config(
+    page_title="Cryobiophysics by B. M. Guerreiro",
+    page_icon="🧊",
+    #layout="wide",
+)
+
+st.title("Cryobiophysics")
+
+
 
 st.header('Digital Appendix')
 st.markdown('#### Implications of a polysaccharide gel undercooler in Classical Nucleation Theory')
@@ -29,7 +42,6 @@ st.write('The critical radius $r^*$ is the checkpoint at which an embryo undergo
 
 st.latex(r'r*= \frac{2\gamma_SL}{∆G_v}')
 
-
 # Define the function to calculate r* based on the equation
 def calculate_r_star(delta_G_v, gamma_SL):
     return 2 * gamma_SL / delta_G_v
@@ -38,8 +50,8 @@ def calculate_r_star(delta_G_v, gamma_SL):
 st.title("Visualization of r* Equation")
 
 # Create sliders for the variables
-delta_G_v = st.slider("Change in Gibbs free energy per unit volume", min_value=1.0, max_value=50.0, value=5.0)
-gamma_SL = st.slider("Surface tension of the liquid-gas interface", min_value=0.1, max_value=1.0, value=0.5)
+delta_G_v = st.slider("Change in Gibbs free energy per unit volume", min_value=1.0, max_value=10.0, value=5.0, step=0.01)
+gamma_SL = st.slider("Surface tension of the liquid-gas interface", min_value=0.1, max_value=1.0, value=0.5, step=0.01)
 
 # Generate random x values
 x = np.linspace(0, 10, 100)
@@ -47,21 +59,21 @@ x = np.linspace(0, 10, 100)
 # Calculate corresponding r* values based on the equation
 y = calculate_r_star(delta_G_v, gamma_SL) * np.sin(x)
 
-# Create the plotly figure
-fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines'))
+# Create a pandas DataFrame with x and y values
+data = {"x": x, "r*": y}
+df = pd.DataFrame(data)
 
-# Update layout, axis labels, and axes ranges
+# Use Plotly Express to create an interactive line plot
+fig = px.line(df, x="x", y="r*", title="")
+
+# Update layout and axes ranges
 fig.update_layout(
-    title="r* = 2 * gamma_SL / delta_G_v * sin(x)",
-    xaxis_title="x",
-    yaxis_title="r*",
     xaxis_range=[0, 5],
     yaxis_range=[-2, 2]
 )
 
-# Display the plot with real-time updates
+# Display the plot
 st.plotly_chart(fig, use_container_width=True)
-
 
 st.write('---')
 
