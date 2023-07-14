@@ -23,14 +23,58 @@ with tab1:
    st.text("tbf")
 
 with tab2:
+    st.subheader('Motivation')
+    st.write(
+        '*Small-molecule cryoprotectants like glycerol, DMSO and trehalose have been extensively studied mechanistically regarding their antifreeze effect. Larger molecules such as PEG and some polyampholytes have also shown potential towards ice growth inhibition. However, cryopreservation research using carbohydrate polymers – particularly bio-based polysaccharides – has been lacking. Despite their inherent biocompatibility that tackles one of the main issues of cryoprotectant exposure, cytotoxicity, most literature focuses purely on post hoc biological viability rather than mechanistic clarifications towards their function, with regards to ice binding, modulation or inhibition. Polysaccharides produced by psychrophiles (cold-adapted microorganisms) that ensure survival in extreme sub-zero habitats are a prime comparative model towards understanding this structure-function interplay. In this review, we summarize the current literature on polysaccharides used in cryopreservation applications and attempt to discern the structural features that contribute to antifreeze performance, from the point of view of polysaccharide-ice interactions.*')
+
+    st.subheader('CryoPol-DB')
+    st.write(
+        'A database containing 145 extremophilic exopolysaccharides (EPS) characterized by 128 organic and 16 mathematically calculated parameters was compiled. The database was split into categories, with 12 variables characterizing microorganism identity, 22 variables for microorganism growth/EPS production conditions, 33 for polysaccharide composition, 12 for polysaccharide structure, 10 for EPS macromolecular fractions, 33 for polysaccharide characteristics (15 for physicochemical properties + 18 for biological functions) and 14 for cryoprotection (7 for biological evidence + 7 for explanatory mechanisms of action). Publishing metadata such as year published, journal and impact factor were discarded for this study. The full database can be found [here](https://cryobiophysics.streamlit.app/#implications-of-a-polysaccharide-gel-undercooler-in-classical-nucleation-theory).')
+
+    option = st.selectbox('Select a category...',
+                          ('Home',
+                           '*Ab initio* considerations',
+                           'Host growth & habitat',
+                           'EDA: Composition',
+                           'EDA: Structure',
+                           'EDA: Properties',
+                           'EDA: Function',
+                           'MLAP Calculations'))
+
+    if option == 'Home':
+        st.write('')
+
+    if option == '*Ab initio* considerations':
+        st.write('under maintenance')
+
+    if option == 'Host growth & habitat':
+        st.subheader('Select extremophile category')
+        extremeType = st.select_slider(
+            'Select a type of extremophile:',
+            options=['Psychrophile', 'Thermophile', 'Halophile', 'Mesophile', 'Alkaliphile', 'Halothermophile',
+                     'Haloalkaliphile'])
+        st.write('You have visualizing data on:', extremeType)
+
+    if option == 'EDA: Composition':
+
+        # Slider
+        st.subheader('Monomer composition')
+
+        fucose = st.slider('Fucose content (wt.%)', 0, 100, 10)
+        st.write("Visualizing all polysaccharides with at least", fucose, '% fucose content.')
+
+        # Example 2
+        st.subheader('Compositional range')
+
+        fuc_range = st.slider(
+            'Select an interval:',
+            0.0, 100.0, (5.0, 25.0))
+        st.write("Visualizing all polysaccharides with a fucose content between", fuc_range, '%.')
+
+    else:
+        st.write('')
 
 
-    st.subheader('Select extremophile category')
-    extremeType = st.select_slider(
-        'Select a type of extremophile:',
-        options=['Psychrophile', 'Thermophile', 'Halophile', 'Mesophile', 'Alkaliphile', 'Halothermophile',
-                 'Haloalkaliphile'])
-    st.write('You have visualizing data on:', extremeType)
 
 with tab3:
     st.header('Digital Appendix')
@@ -97,42 +141,4 @@ with tab3:
     st.subheader('Heterogenous Ice Nucleation')
 
 with tab4:
-    st.subheader('Motivation')
-    st.write('*Small-molecule cryoprotectants like glycerol, DMSO and trehalose have been extensively studied mechanistically regarding their antifreeze effect. Larger molecules such as PEG and some polyampholytes have also shown potential towards ice growth inhibition. However, cryopreservation research using carbohydrate polymers – particularly bio-based polysaccharides – has been lacking. Despite their inherent biocompatibility that tackles one of the main issues of cryoprotectant exposure, cytotoxicity, most literature focuses purely on post hoc biological viability rather than mechanistic clarifications towards their function, with regards to ice binding, modulation or inhibition. Polysaccharides produced by psychrophiles (cold-adapted microorganisms) that ensure survival in extreme sub-zero habitats are a prime comparative model towards understanding this structure-function interplay. In this review, we summarize the current literature on polysaccharides used in cryopreservation applications and attempt to discern the structural features that contribute to antifreeze performance, from the point of view of polysaccharide-ice interactions.*')
-
-    st.subheader('CryoPol-DB')
-    st.write('A database containing 145 extremophilic exopolysaccharides (EPS) characterized by 128 organic and 16 mathematically calculated parameters was compiled. The database was split into categories, with 12 variables characterizing microorganism identity, 22 variables for microorganism growth/EPS production conditions, 33 for polysaccharide composition, 12 for polysaccharide structure, 10 for EPS macromolecular fractions, 33 for polysaccharide characteristics (15 for physicochemical properties + 18 for biological functions) and 14 for cryoprotection (7 for biological evidence + 7 for explanatory mechanisms of action). Publishing metadata such as year published, journal and impact factor were discarded for this study. The full database can be found [here](https://cryobiophysics.streamlit.app/#implications-of-a-polysaccharide-gel-undercooler-in-classical-nucleation-theory).' )
-
-    option = st.selectbox('Select a category...',
-        ('Home',
-         '*Ab initio* considerations',
-         'EDA: Composition',
-         'EDA: Structure',
-         'EDA: Properties',
-         'EDA: Function',
-         'MLAP Calculations'))
-
-    if option == 'Home':
-        st.write('')
-
-    if option == '*Ab initio* considerations':
-        st.write('under maintenance')
-
-    if option == '*Ab initio* considerations':
-
-        # Slider
-        st.subheader('Monomer composition')
-
-        fucose = st.slider('Fucose content (wt.%)', 0, 100, 10)
-        st.write("Visualizing all polysaccharides with at least", fucose, '% fucose content.')
-
-        # Example 2
-        st.subheader('Compositional range')
-
-        fuc_range = st.slider(
-            'Select an interval:',
-            0.0, 100.0, (5.0, 25.0))
-        st.write("Visualizing all polysaccharides with a fucose content between", fuc_range, '%.')
-
-    else:
-        st.write('')
+    st.write('test')
