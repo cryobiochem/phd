@@ -1,4 +1,5 @@
 import streamlit as st  # 🎈 data web app development
+from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 import numpy as np  # generate numbers for functions
 import pandas as pd  # read csv, df manipulation
 import plotly.express as px  # interactive charts
@@ -17,15 +18,36 @@ st.set_page_config(
 
 st.title("🧊 Cryobiophysics")
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Introduction",
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Who am I",
                                         "CryoPol-DB",
                                         "Database Generation",
                                         "Digital Appendix",
                                         "beta-test"])
-
 with tab1:
-   st.text("tbf")
+    st.empty()
+    #
+with tab2:
+    db = pd.read_csv("./data/db-streamlit-test.csv", skiprows=1)
 
+    # Customize Ag-Grid options here: https://archive.is/20230531152052/https://towardsdatascience.com/7-reasons-why-you-should-use-the-streamlit-aggrid-component-2d9a2b6e32f0
+    gb = GridOptionsBuilder.from_dataframe(db)
+    # 1. Add pagination
+    gb.configure_pagination()
+    # 2. Columns can be pinned, grouped and aggregated
+    gb.configure_side_bar()
+    gb.configure_default_column(groupable=True, value=True, enableRowGroup=True, aggFunc="sum", editable=True)
+    # 3. Allow the Ag-Grid to interact with other Streamlit objects
+    gb.configure_selection(selection_mode="multiple", use_checkbox=True)
+    from st_aggrid.shared import GridUpdateMode
+
+    # Construct the db
+    gridOptions = gb.build()
+    data = AgGrid(db,
+                  gridOptions=gridOptions,
+                  enable_enterprise_modules=True,
+                  allow_unsafe_jscode=True,
+                  update_mode=GridUpdateMode.SELECTION_CHANGED
+                  )
 with tab3:
     st.subheader('Motivation')
     st.write(
@@ -77,9 +99,6 @@ with tab3:
 
     else:
         st.write('')
-
-
-
 with tab4:
     st.subheader("2020")
     with st.expander("Implications of a polysaccharide gel undercooler in Classical Nucleation Theory, *Carb Pol*, **2023**"):
@@ -161,7 +180,6 @@ with tab4:
     for i in range(1, 5):
         with st.expander(f"Expander {i}"):
             st.empty()
-
-
 with tab5:
     st.empty()
+    #https://github.com/Kanaries/pygwalker
