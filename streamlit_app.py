@@ -101,8 +101,8 @@ with tab3:
         st.write('')
 with tab4:
     st.subheader("2020")
-    with st.expander("Implications of a polysaccharide gel undercooler in Classical Nucleation Theory, *Carb Pol*, **2023**"):
-        st.markdown('#### Implications of a polysaccharide gel undercooler in Classical Nucleation Theory')
+    with st.expander("Classical Nucleation Theory"):
+        #st.markdown('#### Implications of a polysaccharide gel undercooler in Classical Nucleation Theory')
 
         # Authors & Affiliations
         #st.markdown('B. M. Guerreiro¹²*, M.M. Dionísio³, J.C. Lima³, J.C. Silva⁴, F. Freitas¹²*')
