@@ -104,77 +104,105 @@ with tab4:
     with st.expander("Implications of a polysaccharide gel undercooler in Classical Nucleation Theory, *Carb Pol*, **2023**"):
         st.markdown('#### Implications of a polysaccharide gel undercooler in Classical Nucleation Theory')
 
-        # Authors
-        st.markdown('B. M. Guerreiro¹²*, M.M. Dionísio³, J.C. Lima³, J.C. Silva⁴, F. Freitas¹²*')
-        # Affiliations
-        st.markdown(
-            '¹UCIBIO – Applied Molecular Biosciences Unit, Department of Chemistry, School of Science and Technology, NOVA University Lisbon, Caparica, Portugal')
-        st.markdown(
-            '²Associate Laboratory i4HB - Institute for Health and Bioeconomy, School of Science and Technology, NOVA University Lisbon, Caparica, Portugal')
-        st.markdown(
-            '³LAQV-REQUIMTE, Department of Chemistry, School of Science and Technology, NOVA University Lisbon, Caparica, Portugal')
-        st.markdown(
-            '⁴CENIMAT/I3N, Department of Physics, School of Science and Technology, NOVA University Lisbon, Caparica, Portugal')
-        st.write('*Corresponding authors.')
+        # Authors & Affiliations
+        #st.markdown('B. M. Guerreiro¹²*, M.M. Dionísio³, J.C. Lima³, J.C. Silva⁴, F. Freitas¹²*')
+        #st.markdown('¹UCIBIO – Applied Molecular Biosciences Unit, Department of Chemistry, School of Science and Technology, NOVA University Lisbon, Caparica, Portugal')
+        #st.markdown('²Associate Laboratory i4HB - Institute for Health and Bioeconomy, School of Science and Technology, NOVA University Lisbon, Caparica, Portugal')
+        #st.markdown('³LAQV-REQUIMTE, Department of Chemistry, School of Science and Technology, NOVA University Lisbon, Caparica, Portugal')
+        #st.markdown('⁴CENIMAT/I3N, Department of Physics, School of Science and Technology, NOVA University Lisbon, Caparica, Portugal')
+        #st.write('*Corresponding authors.')
 
-        st.write('---')
 
         # Nucleation
         st.header('1. Nucleation & Growth of ice')
-        st.write(
-            'During solidification, the atomic arrangement changes from a random or short-range order to a long range order or crystal structure. Nucleation occurs when a small nucleus begins to form in the liquid, the nuclei then grows as atoms from the liquid are attached to it. The crucial point is to understand it as a balance between the free energy available from the driving force, and the energy consumed in forming new interface. Once the rate of change of free energy becomes negative, then an embryo can grow.')
+        st.write('During solidification, the atomic arrangement changes from a random or short-range order to a long range order or crystal structure. Nucleation occurs when a small nucleus begins to form in the liquid, the nuclei then grows as atoms from the liquid are attached to it. The crucial point is to understand it as a balance between the free energy available from the driving force, and the energy consumed in forming new interface. Once the rate of change of free energy becomes negative, then an embryo can grow.')
 
         st.subheader("Critical radius $r^*$")
-        st.write(
-            'The critical radius $r^*$ is the checkpoint at which an embryo undergoing growth-decay fluctuations is finally stable enough to survive and grow further. Whenever $r \geq r^*$, nucleation begins.')
-        st.write(
-            'The critical radius $r^*$ is the checkpoint at which an embryo undergoing growth-decay fluctuations is finally stable enough to survive and grow further. Whenever $r \geq r^*$, nucleation begins. The critical radius can be determined as follows: ')
+        st.write('The critical radius $r^*$ is the checkpoint at which an embryo undergoing growth-decay fluctuations is finally stable enough to survive and grow further. Whenever $r \geq r^*$, nucleation begins. The critical radius can be determined as follows: ')
 
         st.latex(r'r*= \frac{2\gamma_SL}{∆G_v}')
 
-        # Create interaction plot with sliders
-        st.write('The following graph expresses this equation:')
+
+        st.subheader('Heterogenous Ice Nucleation')
+        st.write('The nucleation activation energy barrier $\Delta G_n$ is an energetic balance between opposing contributions. When a cluster of a new phase forms, the system decreases its free energy. This is the :blue[driving force] for nucleation and is directly proportional to the volume of the cluster, or $n$:')
+        st.latex(r'-\frac{4}{3} \pi r ^ 3 \Delta G_v')
+        st.write('A two-phase system implies the creation of an interface between the parent phase and the new cluster. This has an energetic cost, proportional to the surface area of the cluster, or $n^{2/3}$:')
+        st.latex(r'4\pi r^2 \gamma_{\text{SL}}')
+
+        st.write('The energy barrier a system must overcome to nucleate is then expressed by a combination of gain and cost functions:')
+        st.latex(r'\Delta G_n = -\frac{4}{3} \pi r^3 \Delta G_v + 4\pi r^2 \gamma_{SL}')
+
+        st.write('Past the critical radius $r^*$, the system will enter equilibrium when $\Delta G_n = \Delta G$, which corresponds to when $\Delta G_n = 0$. Here, we can define the equilibrium radius $r_{eq}$, which expresses the average size that most ice nuclei will achieve, by a Boltzmann distribution.')
 
 
-        # Define the function to calculate r* based on the equation
-        def calculate_r_star(delta_G_v, gamma_SL):
-            return 2 * gamma_SL / delta_G_v
+        def calculate_curves(delta_G_v, gamma_SL, r):
+            curve1 = 4 * np.pi * r ** 2 * gamma_SL
+            curve2 = -4 / 3 * np.pi * r ** 3 * delta_G_v
+            curve3 = -4 / 3 * np.pi * r ** 3 * delta_G_v + 4 * np.pi * r ** 2 * gamma_SL
+            return curve1, curve2, curve3
 
 
-        # Set up the Streamlit app
-        st.title("Visualization of r* Equation")
+        col1, col2 = st.columns(2)
 
-        # Create sliders for the variables
-        delta_G_v = st.slider("Change in Gibbs free energy per unit volume", min_value=1.0, max_value=10.0, value=5.0,
-                              step=0.01)
-        gamma_SL = st.slider("Surface tension of the liquid-gas interface", min_value=0.1, max_value=1.0, value=0.5,
-                             step=0.01)
+        with col1:
+            # Create sliders for the variables
+            gamma_SL = st.slider("Surface tension of the solid-liquid interface", min_value=0.00, max_value=1.00, value=0.35,
+                                 step=0.01, key='nucleation_eq_1')
 
-        # Generate random x values
-        x = np.linspace(0, 10, 100)
+        with col2:
+            delta_G_v = st.slider("Change in Gibbs free energy per unit volume", min_value=0.000, max_value=0.500,
+                                  value=0.110, key='nucleation_eq_2')
 
-        # Calculate corresponding r* values based on the equation
-        y = calculate_r_star(delta_G_v, gamma_SL) * np.sin(x)
+        # Generate random r values
+        r = np.linspace(0, 100, 1000)
 
-        # Create a pandas DataFrame with x and y values
-        data = {"x": x, "r*": y}
+        # Calculate the curves
+        curve1, curve2, curve3 = calculate_curves(delta_G_v, gamma_SL, r)
+
+        # Create a pandas DataFrame with r and curve values
+        data = {"r": r, "Interfacial energy": curve1, "Volumetric free energy": curve2, "Nucleation barrier": curve3}
         df = pd.DataFrame(data)
 
         # Use Plotly Express to create an interactive line plot
-        fig = px.line(df, x="x", y="r*", title="")
-
+        fig = px.line(df, x="r", y=["Interfacial energy", "Volumetric free energy", "Nucleation barrier"],
+                      color_discrete_map={"Interfacial energy": "red", "Volumetric free energy": "blue", "Nucleation barrier": "green"})
         # Update layout and axes ranges
-        fig.update_layout(
-            xaxis_range=[0, 5],
-            yaxis_range=[-2, 2]
-        )
+        fig.update_layout(title="", xaxis_title="r", yaxis_title="&#8710;G", #https://www.toptal.com/designers/htmlarrows/math/
+                          yaxis_range=[-200,200], xaxis_range=[0,12])
+
+        ### Calculate equilibrium radius
+        # Identify the indices where curve3 crosses zero (excluding the origin)
+        zero_crossings = np.where(np.diff(np.sign(curve3)))[0]
+        valid_zero_crossings = zero_crossings[curve3[zero_crossings] != 0]
+        # Add light green markers for zero crossings in Curve 3
+        if len(zero_crossings) > 0:
+            r_equilibrium = r[valid_zero_crossings[0]]
+            fig.add_trace(go.Scatter(x=[r_equilibrium], y=[0], mode='markers', marker=dict(color='lightgreen', size=8),
+                                     name='Equilibrium Radius'))
+            fig.add_annotation(x=r_equilibrium, y=0, text='Equilibrium Radius', showarrow=True, arrowhead=1, ax=0,
+                               ay=-10)
+
+        ### Calculate critical radius
+        peak_index = np.argmax(curve3)
+        r_critical = r[peak_index]
+        fig.add_trace(
+            go.Scatter(x=[r_critical], y=[curve3[peak_index]], mode='markers', marker=dict(color='green', size=8),
+                       name='Critical Radius'))
+        fig.add_annotation(x=r_critical, y=curve3[peak_index], text='Critical Radius', showarrow=True, arrowhead=1,
+                           ax=-0, ay=-10)
+
+        # Add a static curve based on Curve 3 with constant values
+        static_curve_gamma_SL = 0.35
+        static_curve_delta_G_v = 0.11
+        static_curve = -4 / 3 * np.pi * r ** 3 * static_curve_delta_G_v + 4 * np.pi * r ** 2 * static_curve_gamma_SL
+        fig.add_trace(go.Scatter(x=r, y=static_curve, mode='lines', line=dict(color='gray'), name='Pure water'))
+
 
         # Display the plot
         st.plotly_chart(fig, use_container_width=True)
-
         st.write('---')
 
-        st.subheader('Heterogenous Ice Nucleation')
+
 
     st.subheader("2023")
     for i in range(1, 5):
@@ -182,4 +210,3 @@ with tab4:
             st.empty()
 with tab5:
     st.empty()
-    #https://github.com/Kanaries/pygwalker
