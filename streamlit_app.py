@@ -458,8 +458,8 @@ with tab4:
 
         def calculate_curves(delta_G_v, gamma_SL, r, n):
             InterfacialEnergy = 4 * np.pi * r ** 2 * gamma_SL * (n ** (2 / 3))
-            VolumeFreeEnergy = -4 / 3 * np.pi * r ** 3 * delta_G_v * 1 / n
-            NucleationEnergyBarrier = -4 / 3 * np.pi * r ** 3 * delta_G_v * 1 / n + 4 * np.pi * r ** 2 * gamma_SL * (
+            VolumeFreeEnergy = -4 / 3 * np.pi * r ** 3 * delta_G_v * n
+            NucleationEnergyBarrier = -4 / 3 * np.pi * r ** 3 * delta_G_v * n + 4 * np.pi * r ** 2 * gamma_SL * (
                         n ** (2 / 3))
             return InterfacialEnergy, VolumeFreeEnergy, NucleationEnergyBarrier
 
