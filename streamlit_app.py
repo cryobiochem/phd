@@ -4,6 +4,7 @@ import numpy as np  # generate numbers for functions
 import pandas as pd  # read csv, df manipulation
 import plotly.express as px  # interactive charts
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 import altair as alt
 from datetime import time, datetime # to simulate a real time data, time loop
 
@@ -18,36 +19,16 @@ st.set_page_config(
 
 st.title("🧊 Cryobiophysics")
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Who am I",
+tab1, tab2, tab3, tab4, database = st.tabs(["Who am I",
                                         "CryoPol-DB",
                                         "Database Generation",
                                         "Digital Appendix",
-                                        "Meeting 20.07.2023"])
+                                        "Database"])
 with tab1:
     st.empty()
     #
 with tab2:
-    db = pd.read_csv("./data/db-streamlit-test.csv", skiprows=1)
-
-    # Customize Ag-Grid options here: https://archive.is/20230531152052/https://towardsdatascience.com/7-reasons-why-you-should-use-the-streamlit-aggrid-component-2d9a2b6e32f0
-    gb = GridOptionsBuilder.from_dataframe(db)
-    # 1. Add pagination
-    gb.configure_pagination()
-    # 2. Columns can be pinned, grouped and aggregated
-    gb.configure_side_bar()
-    gb.configure_default_column(groupable=True, value=True, enableRowGroup=True, aggFunc="sum", editable=True)
-    # 3. Allow the Ag-Grid to interact with other Streamlit objects
-    gb.configure_selection(selection_mode="multiple", use_checkbox=True)
-    from st_aggrid.shared import GridUpdateMode
-
-    # Construct the db
-    gridOptions = gb.build()
-    data = AgGrid(db,
-                  gridOptions=gridOptions,
-                  enable_enterprise_modules=True,
-                  allow_unsafe_jscode=True,
-                  update_mode=GridUpdateMode.SELECTION_CHANGED
-                  )
+    st.empty()
 with tab3:
     st.subheader('Motivation')
     st.write(
@@ -604,11 +585,66 @@ with tab4:
 
     st.write('---')
 
-with tab5:
-    st.empty()
+with database:
+    import streamlit as st
+    import pandas as pd
+    import plotly.graph_objects as go
+    from plotly.subplots import make_subplots
 
+    # Load Data
+    db = pd.read_csv("./data/db-streamlit-test.csv", skiprows=1)
+    db.fillna('[Unknown]', inplace=True)
 
+    # Sidebar Filters
+    st.sidebar.header("Database Navigation")
 
+    # Toggle button for README visibility
+    show_readme = st.sidebar.button("Toggle README")
 
+    # Selectbox for choosing the parameter with a default text
+    selected_parameter = st.sidebar.selectbox("Distributions by parameter",
+                                              ["Select type of distribution here...", "Extremophile Type", "Kingdom",
+                                               "Phylum", "Respiration"])
 
+    # Visualization based on selection
+    if show_readme:
+        st.subheader("About the database")
+        st.write(
+            'A database containing 145 extremophilic exopolysaccharides (EPS) characterized by 128 organic and 16 mathematically calculated parameters was compiled. The database was split into categories, with 12 variables characterizing microorganism identity, 22 variables for microorganism growth/EPS production conditions, 33 for polysaccharide composition, 12 for polysaccharide structure, 10 for EPS macromolecular fractions, 33 for polysaccharide characteristics (15 for physicochemical properties + 18 for biological functions) and 14 for cryoprotection (7 for biological evidence + 7 for explanatory mechanisms of action).')
+
+    elif selected_parameter == "Extremophile Type":
+        st.header('Distribution of polysaccharide dataset by:')
+        extremetype_pie = px.pie(db, names='ExtremeType', title='Extremophile Type')
+        st.plotly_chart(extremetype_pie)
+
+    elif selected_parameter == "Kingdom":
+        kingdom_pie = px.pie(db, names='Kingdom', title='Kingdom')
+        st.plotly_chart(kingdom_pie)
+
+    elif selected_parameter == "Phylum":
+        phylum_pie = px.pie(db, names='Phylum', title='Phylum')
+        st.plotly_chart(phylum_pie)
+
+    elif selected_parameter == "Respiration":
+        st.header('Type of respiratory metabolism')
+
+        # Create a 3x3 panel for pie charts using make_subplots
+        row_count = 3
+        col_count = 3
+        fig = make_subplots(rows=row_count, cols=col_count, subplot_titles=db['ExtremeType'].unique(),
+                            specs=[[{'type': 'pie'}] * col_count] * row_count)
+
+        # Iterate over each unique ExtremeType and create a pie chart
+        for i, extreme_type in enumerate(db['ExtremeType'].unique()):
+            row_num = (i // col_count) + 1
+            col_num = (i % col_count) + 1
+
+            filtered_data = db[db['ExtremeType'] == extreme_type]
+            pie_chart = go.Figure(
+                go.Pie(labels=filtered_data['Respiration'].unique(), values=filtered_data['Respiration'].value_counts()))
+            fig.add_trace(pie_chart['data'][0], row=row_num, col=col_num)
+
+        # Update layout and show the plot
+        fig.update_layout(height=600, width=800)
+        st.plotly_chart(fig)
 
