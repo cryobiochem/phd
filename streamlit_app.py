@@ -18,6 +18,8 @@ st.set_page_config(
 )
 
 st.title("🧊 Cryobiophysics")
+st.markdown("##### A data science project by Bruno M. Guerreiro © 2024")
+st.write('---')
 
 tab1, tab2, tab3, tab4, database = st.tabs(["Who am I",
                                         "CryoPol-DB",
@@ -648,3 +650,5 @@ with database:
         fig.update_layout(height=600, width=800)
         st.plotly_chart(fig)
 
+st.write('---')
+st.markdown('<div style="text-align: right;"><sub>Bruno M. Guerreiro © 2024</sub></div>', unsafe_allow_html=True)
