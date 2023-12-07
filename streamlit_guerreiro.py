@@ -1,4 +1,5 @@
 import streamlit as st  # 🎈 data web app development
+from streamlit_timeline import timeline
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 import numpy as np  # generate numbers for functions
 import pandas as pd  # read csv, df manipulation
@@ -12,22 +13,17 @@ from datetime import time, datetime # to simulate a real time data, time loop
 st.set_page_config(
     page_title="Bruno M. Guerreiro | Portfolio",
     page_icon="🇵🇹",
-    #layout="wide",
+    layout="wide",
 )
 
-### MAIN TITLE
-st.title("🇵🇹 Bruno M. Guerreiro")
-st.markdown("##### A personal portfolio project © 2024.")
-st.caption('Bruno M. Guerreiro is a Biochemistry Ph.D. with 7 years of experience in cryopreservation research. '
-           'Bruno is an internationally renowned scientist, with **9** scientific publications, **10** conference participations, **7** awards and **3** fellowships. '
-           'With a life sciences background, Bruno is also a self-taught enthusiast, having accumulated a total of **23 online certifications** in Data Science, Deep Learning, TensorFlow and complementary fields.')
-
 ### SIDEBAR
+
+# Custom JavaScript code to open the sidebar by default
 st.sidebar.title("🇵🇹 Bruno M. Guerreiro")
 st.sidebar.markdown("##### A personal portfolio project © 2024.")
 st.sidebar.caption('Bruno M. Guerreiro is a Biochemistry Ph.D. with 7 years of experience in cryopreservation research. '
            'Bruno is an internationally renowned scientist, with **9** scientific publications, **10** conference participations, **7** awards and **3** fellowships. '
-           'With a life sciences background, Bruno is also a self-taught enthusiast, having accumulated a total of **23 online certifications** in Data Science, Deep Learning, TensorFlow and complementary fields.')
+           'With a life sciences background, Bruno is also a self-growth enthusiast, having accumulated a total of **23 online certifications** in Data Science, Deep Learning, TensorFlow and complementary fields.')
 
 # Create 4 columns for the logos with reduced spacing
 gmail, scholar, github, linkedin, c5, c6, c7, c8 = st.sidebar.columns(8)
@@ -51,10 +47,10 @@ linkedin.markdown('<div style="text-align: left"><a href="https://www.linkedin.c
 
 st.sidebar.write('')
 
-if st.sidebar.button("Resume/CV"):
-    # Add the download link for Resume
-    st.sidebar.markdown('<div style="text-align: left">[Download Resume/CV here](link_to_resume)</div>')
+# Resume/CV download button
+st.sidebar.markdown(f'<a href="https://1drv.ms/b/s!At7e_tE6ZFn0hJoSI8rhGrTpzQKJ3Q?e=kcVa7A" download="Resume_CV.pdf"><button style="cursor: pointer; padding: 10px; border: none; border-radius: 5px;">Download Resume/CV</button></a>', unsafe_allow_html=True)
 
+st.sidebar.caption("📌 Based in Setúbal/Lisbon")
 
 ### CONTENT
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(["About me",
@@ -68,3 +64,46 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(["About me",
 
 st.write('---')
 st.markdown('<div style="text-align: right;"><sub>Bruno M. Guerreiro © 2024</sub></div>', unsafe_allow_html=True)
+
+
+with tab1:
+    ### TIMELINE
+    with open('timeline.json', "r") as f:
+        data = f.read()
+    timeline(data, height=600)
+
+with tab2:
+    t = 'A faster way to build and share data apps'
+    html_style = '''
+    <style>
+    div:has( >.element-container div.floating) {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+    }
+
+    div.floating {
+        height:0%;
+    }
+    </style>
+    '''
+    st.markdown(html_style, unsafe_allow_html=True)
+
+    col1, col2 = st.columns([9, 2])
+
+    with col1:
+        for i in range(0, 30):
+            st.header("Today's news")
+            st.write(t)
+
+    with col2:
+        st.markdown(
+            '''
+                <div class="floating">
+                    <a href='https://streamlit.io/'>Hello Streamlit</a>
+                    <a href='https://streamlit.io/'>Hello Streamlit</a>
+                    <a href='https://streamlit.io/'>Hello Streamlit</a>
+                </div>
+            ''',
+            unsafe_allow_html=True
+        )
