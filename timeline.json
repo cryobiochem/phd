@@ -1,0 +1,261 @@
+
+{
+    "title": {
+        "media": {
+          "url": "https://cdn.accentuate.io/391483293854/15173957288094/iStock-10177213261-v1603800780511.jpg?2121x1057"
+        },
+        "text": {
+          "headline": "ABOUT ME",
+          "text": "<p>A chronological timeline of life/career milestones and achievements.</p>"
+        }
+    },
+    "events": [
+      {
+        "media": {
+          "url": "https://cdn.accentuate.io/391483293854/15173957288094/iStock-10177213261-v1603800780511.jpg?2121x1057",
+          "caption": "Bruno Guerreiro as a baby."
+        },
+        "start_date": {
+          "year": "1995",
+          "month": "1",
+          "day": 8
+        },
+        "text": {
+          "headline": "Bruno M. Guerreiro",
+          "text": "<p>was born in Setubal, Portugal. When he was 10 and asked about his future profession, he wanted to <i>'know things no one has discovered yet'</i>.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2013"
+        },
+
+        "end_date": {
+          "year": "2016"
+        },
+        "text": {
+          "headline": "B.Sc. Biochemistry",
+          "text": "<p>Bruno graduated with 3.8 GPA from the NOVA School of Science and Technology, Portugal. His final thesis project, of his own device, involved describing the <b>calorimetric behavior of antifreeze proteins</b>, which he excelled at (20/20).</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2016"
+        },
+
+        "end_date": {
+          "year": "2018"
+        },
+        "text": {
+          "headline": "M.Sc. Biochemistry",
+          "text": "<p>With a max 4.0 GPA at the same institute, his Masters' dissertation was done in the <a href=https://www.ucibio.pt/research-groups/lab/biochemical-engineering>BIOENG</a> biotechnology lab. He followed up his vision by <b>developing cryoprotective formulas based on natural polysaccharides</b>. He published 4 papers as consequence of his work.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2018",
+          "month": "7"
+        },
+
+        "text": {
+          "headline": "CRYO2018",
+          "text": "<p>The 55<sup>th</sup> Annual Meeting of the Society for Cryobiology was Bruno's first international conference (Spain). He was invited to orally present his M.Sc. work, which granted him a <b>$400 Student Travel Award</b>. Bruno also chaired two conference sessions.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2018",
+          "month": "11"
+        },
+
+        "end_date": {
+          "year": "2019",
+          "month": "12"
+        },
+        "text": {
+          "headline": "Research gap year",
+          "text": "<p>Now an M.Sc. and fueled by his CRYO2018 success, Bruno committed to a sabbatical year. While contributing to European <b>Horizon 2020</b> research projects, Bruno focused on publishing all remaining research papers.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2020",
+          "month": "1"
+        },
+
+        "end_date": {
+          "year": "2024",
+          "month": "3"
+        },
+        "text": {
+          "headline": "Ph.D. Biochemistry",
+          "text": "<p>Under a fully-funded FC&T fellowship, Bruno continued his research in cryopreservation under a Ph.D. program. In a time before the AI boom, Bruno became increasingly interested in merging life sciences with data science. His thesis focused on the <b>structure-function relationships of polysaccharides in crystal binding</b>.<br><br> He also indulged in other responsibilities, such as being an <b>Academic Peer Reviewer</b> for Biomacromolecules and Food Hydrocolloids journals, and being an <b>Associate Editor</b> of the Carbohydrate Newsletter (Portuguese Society of Chemistry).</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2020",
+          "month": "3"
+        },
+        "end_date": {
+          "year": "2020",
+          "month": "12"
+        },
+        "text": {
+          "headline": "COVID Pandemic",
+          "text": "<p>Several quarantines hindered Bruno's experimental work so he adapted. Modelling the structural traits necessary for optimal cryoprotection is a humongous task. Instead of mass-collecting lab data, he resorted to learning data science for multidimensional analysis and modelling. After data scraping 190 research articles to find trends between molecular structure and cryoprotective function, he created a 145x128 database that allowed him to hasten the experimental screening process by 98%. After data scraping 190 research articles to find trends between molecular structure and cryoprotective function, he created a 145x128 database that allowed him to hasten the experimental screening process by 98%. The <b>CryoPolDB</b> has been constantly maintained for 3.5 years.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2020",
+          "month": "4"
+        },
+        "end_date": {
+          "year": "2020",
+          "month": "5"
+        },
+        "text": {
+          "headline": "Helpful Engineering",
+          "text": "<p>At the same time, he felt his calling as Biochemist. He joined a <b>voluntary collaboration effort which gathered 13000 people across the world</b> which aimed to design and produce masks, HEPA filters and mechanical ventilators to fight COVID-19. Bruno became the medical liaison between a consortium of 200 Portuguese doctors and 15 prototyping teams, coordinating designs and communication.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2021"
+        },
+        "text": {
+          "headline": "MDPI Polymers 2021 Best Cover Paper Award",
+          "text": "<p>During his PhD work, the graphical artwork of one of his papers was chosen as front cover of Volume 13, Issue 18 of the MDPI Polymers journal. Later that year, it would be recognized as the <b>Best Cover Paper of 2021</b> from a list of 48 candidates.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2021",
+          "month": "9"
+        },
+         "end_date": {
+          "year": "2022",
+          "month": "3"
+        },
+        "text": {
+          "headline": "Fulbright Portugal x USA",
+          "text": "<p>Bruno won a Fulbright Visiting Student Researcher grant to study isochoric cryopreservation at the University of California-Berkeley, under Prof. Boris Rubinsky. UC-Berkeley is the #1 Public University in the World and had just received a $26M fund to cryopreservation research. In 6 months, Bruno published two research papers. He was also fully funded with a <b>$5000 Luso-American Development Foundation Fellowship</b> and a <b>$2200 Company of Biologists Fellowship</b>.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2022",
+          "month": "7"
+        },
+        "text": {
+          "headline": "$2000 John K. Critser Award",
+          "text": "<p>At CRYO2022 in Dublin, his most influential paper produced in Berkeley would be considered the <b>best research contribution of the year</b>. Bruno also won a $500 Travel Award and was nominated for the Peter L. Steponkus Crystal Award.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2023",
+          "month": "9"
+        },
+        "text": {
+          "headline": "ESBP2023",
+          "text": "<p>One year later in Brno, Czech Republic, Bruno would also be awarded with the Best Student Poster Presentation</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2022",
+          "month": "11"
+        },
+        "end_date": {
+          "year": "2023",
+          "month": "11"
+        },
+        "text": {
+          "headline": "ESSG x Fulbright<br>Ambassador",
+          "text": "<p>After his USA experience and almost finished with a PhD, Bruno re-connected with his <i>alma mater</i> highschool. He was invited by old professors to share his experience abroad with the students. Eventually, several sessions of 200+ students were gathered and the Fulbright Committee networked with the school, sharing their exchange programs.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2023",
+          "month": "3"
+        },
+        "end_date": {
+          "year": "2023",
+          "month": "9"
+        },
+        "text": {
+          "headline": "NOVA Debate<br>Content Coordinator",
+          "text": "<p>Bruno also enrolled the NOVA Debate student nucleus, in pursuit of further intellectual prowess. He played a content coordinator and curator role for several debating sessions after his PhD work, refining his public speaking, managing, mentoring and conflict resolution skills.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
+          "caption": "text here"
+        },
+        "start_date": {
+          "year": "2024",
+          "month": "3"
+        },
+        "text": {
+          "headline": "Looking for new challenges",
+          "text": "<p>Now finishing my Ph.D. journey, I believe all my years of acquired value and soft skills have prepared me for an industry job. I believe I have the efficiency, productivity, adaptability, problem-solving capabilities and a versatile skillset to perform and excel at any challenge.</p>"
+        }
+      }
+    ]
+}
