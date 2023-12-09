@@ -2,18 +2,18 @@
 {
     "title": {
         "media": {
-          "url": "https://cdn.accentuate.io/391483293854/15173957288094/iStock-10177213261-v1603800780511.jpg?2121x1057"
+          "url": "https://i.imgur.com/T9Grn0m.png"
         },
         "text": {
           "headline": "ABOUT ME",
-          "text": "<p>A chronological timeline of life/career milestones and achievements.</p>"
+          "text": "<p>A chronological timeline of life/career milestones & achievements<br>and <b>why you should hire me</b> (see the end).</p>"
         }
     },
     "events": [
       {
         "media": {
-          "url": "https://cdn.accentuate.io/391483293854/15173957288094/iStock-10177213261-v1603800780511.jpg?2121x1057",
-          "caption": "Bruno Guerreiro as a baby."
+          "url": "https://static.portugalbywine.com/media//MULTIMEDIA/FOTOS/244/0003E8EE6A4DA9.jpg",
+          "caption": "The Setubal Peninsula, just south of Lisbon."
         },
         "start_date": {
           "year": "1995",
@@ -27,8 +27,8 @@
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/0IFg99o.png",
+          "caption": "A type I antifreeze protein binds to an ice lattice, inhibiting ice growth."
         },
         "start_date": {
           "year": "2013"
@@ -44,15 +44,16 @@
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/M9iNxnF.png",
+          "caption": "Bruno freezing his biological samples in a -80&deg;C storage unit: cryopreservation."
         },
         "start_date": {
           "year": "2016"
         },
 
         "end_date": {
-          "year": "2018"
+          "year": "2018",
+          "month": "11"
         },
         "text": {
           "headline": "M.Sc. Biochemistry",
@@ -61,8 +62,8 @@
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/g41Riau.jpg",
+          "caption": "Bruno presenting at CRYO2018 to an audience of 300 cryobiologists, where we won a Travel Award."
         },
         "start_date": {
           "year": "2018",
@@ -76,8 +77,7 @@
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/QNzeHwZ.png"
         },
         "start_date": {
           "year": "2018",
@@ -95,8 +95,8 @@
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/rcxtyKt.png",
+          "caption": ""
         },
         "start_date": {
           "year": "2020",
@@ -114,8 +114,8 @@
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/5xsz9oC.png",
+          "caption": "The COVID-19 pandemic forced Bruno to adapt and he became increasingly excited to learn new skills."
         },
         "start_date": {
           "year": "2020",
@@ -126,14 +126,14 @@
           "month": "12"
         },
         "text": {
-          "headline": "COVID Pandemic",
-          "text": "<p>Several quarantines hindered Bruno's experimental work so he adapted. Modelling the structural traits necessary for optimal cryoprotection is a humongous task. Instead of mass-collecting lab data, he resorted to learning data science for multidimensional analysis and modelling. After data scraping 190 research articles to find trends between molecular structure and cryoprotective function, he created a 145x128 database that allowed him to hasten the experimental screening process by 98%. After data scraping 190 research articles to find trends between molecular structure and cryoprotective function, he created a 145x128 database that allowed him to hasten the experimental screening process by 98%. The <b>CryoPolDB</b> has been constantly maintained for 3.5 years.</p>"
+          "headline": "COVID-19 Pandemic",
+          "text": "<p>Several quarantines hindered Bruno's experimental work so he adapted. Modelling the structural traits necessary for optimal cryoprotection is a humongous task. Instead of mass-collecting lab data, he resorted to <b>learning data science for multidimensional analysis and modelling</b>. He obtained 23 certifications in 2020.<br><br>After data scraping 190 research articles to find trends between molecular structure and cryoprotective function, he created a 145x128 database that allowed him to hasten the experimental screening process by 98%. The <b>CryoPolDB</b> has been constantly maintained for 3.5 years.</p>"
         }
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/FBg461q.jpg",
+          "caption": "Bruno was a Tech Project Lead, managing over 200 people and 15 teams in a fast-paced environment."
         },
         "start_date": {
           "year": "2020",
@@ -150,8 +150,7 @@
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/qI0MAWD.jpg"
         },
         "start_date": {
           "year": "2021"
@@ -163,8 +162,8 @@
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/aEIq93a.jpg",
+          "caption": "Bruno holding the organ preservation chamber <i>(UC-Berkeley, USA)</i>."
         },
         "start_date": {
           "year": "2021",
@@ -181,8 +180,8 @@
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/LtEFMMh.jpg",
+          "caption": "Bruno receiving both awards <i>(Dublin, Ireland)</i>."
         },
         "start_date": {
           "year": "2022",
@@ -195,8 +194,7 @@
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/ynDiRKq.png"
         },
         "start_date": {
           "year": "2023",
@@ -204,13 +202,13 @@
         },
         "text": {
           "headline": "ESBP2023",
-          "text": "<p>One year later in Brno, Czech Republic, Bruno would also be awarded with the Best Student Poster Presentation</p>"
+          "text": "<p>One year later in Brno, Czech Republic, Bruno would also be awarded with the Best Student Poster Presentation. This time, the focus would be how <b>data science tools enabled him to discover a new mechanism in cryopreservation</b>, using K-means clustering algorithms and Principal Component Analysis for dimensionality reduction. For this award, he was invited by the committee to publish his work in a special issue of <i>New Biotechnology</i>.</p>"
         }
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/IeQRGjQ.jpg",
+          "caption": "Bruno (left), next to the ESSG faculty and the Fulbright Portugal Commission."
         },
         "start_date": {
           "year": "2022",
@@ -222,13 +220,13 @@
         },
         "text": {
           "headline": "ESSG x Fulbright<br>Ambassador",
-          "text": "<p>After his USA experience and almost finished with a PhD, Bruno re-connected with his <i>alma mater</i> highschool. He was invited by old professors to share his experience abroad with the students. Eventually, several sessions of 200+ students were gathered and the Fulbright Committee networked with the school, sharing their exchange programs.</p>"
+          "text": "<p>Bruno re-connected with his <i>alma mater</i> highschool after his USA experience and almost finished with a Ph.D. As spokesperson, he was invited by old professors to share his experience abroad with the students. Eventually, several sessions of 150+ students were gathered and the Fulbright Committee acknowledged the voluntary ambassadorship.</p>"
         }
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/Abf0p7T.png",
+          "caption": "Attending one of the weekly discourses with the NOVA Debate team. The topic was gender equality in sports."
         },
         "start_date": {
           "year": "2023",
@@ -245,8 +243,20 @@
       },
       {
         "media": {
-          "url": "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg",
-          "caption": "text here"
+          "url": "https://i.imgur.com/aHfy29I.jpg"
+        },
+        "start_date": {
+          "year": "2023",
+          "month": "8"
+        },
+        "text": {
+          "headline": "Media Exposure",
+          "text": "<p>Bruno's milestones eventually caught up to him. Bruno was interviewed for <b>Jornal Expresso</b> and his work was featured in print. Also, his work in Berkeley featured in a special issue of <b>Forbes</b> focusing on cryopreservation as futuristic medical tech. He was also invited to the Unexpected Data podcast to share his efforts in bridging cryopreservation with data science.</p>"
+        }
+      },
+      {
+        "media": {
+          "url": "https://i.imgur.com/R5148W9.png"
         },
         "start_date": {
           "year": "2024",
@@ -254,7 +264,7 @@
         },
         "text": {
           "headline": "Looking for new challenges",
-          "text": "<p>Now finishing my Ph.D. journey, I believe all my years of acquired value and soft skills have prepared me for an industry job. I believe I have the efficiency, productivity, adaptability, problem-solving capabilities and a versatile skillset to perform and excel at any challenge.</p>"
+          "text": "<p>Now finishing my Ph.D. journey, I believe all my years of acquired value and soft skills have prepared me for an industry job. I believe I have the efficiency, productivity, adaptability, problem-solving capabilities and a versatile skillset to perform and excel at any challenge.<br><br><a href='https://mail.google.com/mail/u/0/?view=cm&fs=1&to=guerreiro.bms@gmail.com&su=New%20job%20opportunity%20for%20Bruno%20M.%20Guerreiro'>Hire me now.</a></p>"
         }
       }
     ]
