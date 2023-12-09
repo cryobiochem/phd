@@ -19,7 +19,9 @@ st.set_page_config(
 ### SIDEBAR
 
 # Custom JavaScript code to open the sidebar by default
-st.sidebar.title("🇵🇹 Bruno M. Guerreiro")
+#st.sidebar.title("🇵🇹 Bruno M. Guerreiro")
+st.sidebar.markdown('<div style="text-align: left; margin-bottom: 12px"><a href="https://guerreiro.streamlit.app/">''<img src="https://i.imgur.com/t3cH48K.png" alt="Bruno M. Guerreiro" width="250">'
+    '</a></div>', unsafe_allow_html=True)
 st.sidebar.markdown("##### A personal portfolio project © 2024.")
 st.sidebar.caption('Bruno M. Guerreiro is a Biochemistry Ph.D. with 7 years of experience in cryopreservation research. '
            'Bruno is an internationally renowned scientist, with **9** scientific publications, **10** conference participations, **7** awards and **3** fellowships. '
