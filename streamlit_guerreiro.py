@@ -59,16 +59,17 @@ st.sidebar.markdown(f'<a href="https://1drv.ms/b/s!At7e_tE6ZFn0hJoSI8rhGrTpzQKJ3
 
 st.sidebar.caption("📌 Based in Setúbal/Lisbon")
 
+st.sidebar.info("⚠️ For optimal website experience, use light theme & wide mode.")
+
 ### CONTENT
-aboutme, phd, ds, gd, tw, proj, certs, media, blog = st.tabs(["About me",
-                                                         "PhD",
+aboutme, certs, phd, ds, gd, tw, proj, media = st.tabs(["About me",
+                                                         "Certifications",
+                                                         "Ph.D.",
                                                          "Data Science",
-                                                          "Graphic Design",
-                                                          "Technical Writing",
-                                                          "Projects",
-                                                          "Certifications",
-                                                          "Media",
-                                                          "Blog"])
+                                                         "Graphic Design",
+                                                         "Technical Writing",
+                                                         "Projects",
+                                                         "Media"])
 
 st.write('---')
 st.markdown('<div style="text-align: right;"><sub>Bruno M. Guerreiro © 2024</sub></div>', unsafe_allow_html=True)
@@ -85,35 +86,44 @@ with phd:
     st.caption("I have a strong background in life sciences and scientific research, having accumulated 10 years of constant critical thinking and problem-solving capabilities, and almost 7 years of theoretical and applied research focus."
                " My 4-year Ph.D. journey in particular has equipped me with a core skillset of adaptability, efficiency, productivity and being able to get out of a rut. Producing new knowledge in a scientific field"
                " is often a arduous path and requires patience, determination and ambition. Backing up, defending and presenting our ideas is also a part of the research life, such that I have honed"
-               "illustration, data visualization, data analysis and public speaking skills that complement my seek for knowledge with the ability to share that knowledge to various audiences. This section demonstrates skills in:")
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1: st.info("Critical Thinking")
-    with col2: st.info("Problem Solving")
-    with col3: st.info("Public Speaking")
-    with col4: st.info("Technical Writing")
-    with col5: st.info("Data Presentation")
+               "illustration, data visualization, data analysis and public speaking skills that complement my seek for knowledge with the ability to share that knowledge to various audiences.")
 
     with st.container(border=True):
-        st.image("https://i.imgur.com/FFmcCPY.png")
+        st.markdown("Skills demonstrated in this section:")
+        col1, col2, col3, col4, col5 = st.columns(5)
+        with col1: st.info("Critical Thinking")
+        with col2: st.info("Problem Solving")
+        with col3: st.info("Public Speaking")
+        with col4: st.info("Technical Writing")
+        with col5: st.info("Data Presentation")
 
-    st.subheader("Cryopreservation")
+    st.write("")
+
+    st.image("https://i.imgur.com/H26Nnem.png")
+
+    st.write("")
+    st.write("")
+    st.subheader("Cryopreservation fundamentals + my approach")
     with st.container(border=True):
-        st.markdown("This section described here.")
+        st.image("https://i.imgur.com/fW46l27.png")
 
-    st.subheader("The problem: organ transplant crisis")
-
+    st.write("")
+    st.write("")
+    st.subheader("The organ transplant crisis")
     with st.container(border=True):
-        st.markdown("The organ transplant crisis kills around 17 people daily, and a patient is added to the waiting list every 10 minutes. Demand far outweighs supply by 10x, and 66% of donated hearts, having only a viability window of 4 hours, are discarded. Achieving successful cryopreservation will be the landmark achievement of the century, but current chemical cryoprotectants are all cytotoxic. Bio-based, biodegradable polysaccharides are safer alternatives. Some polymers have shown promising cryoprotective function, but the structure-function relationships required for the intentional design of new cryoprotectants remain largely unknown. This work reports a stepping-stone analysis into understanding the cryoprotective action of polysaccharides. We correlated the chemical composition of several polysaccharides towards their established in vitro performance, in the light of known mechanisms of cryoprotection: chemical binding affinity and molecular weight scaling.")
-    st.image("https://i.imgur.com/2TIldH4.png")
+        st.image("https://i.imgur.com/5f6BDf9.png")
 
-    st.subheader("My focus: X")
-
+    st.write("")
+    st.write("")
+    st.subheader("Lab work methodology")
     with st.container(border=True):
-     st.markdown("This section described here.")
+        st.image("https://i.imgur.com/SNt2e6m.jpg")
 
-    st.subheader("My contributions")
+    st.write("")
+    st.write("")
+    st.subheader("Some of my contributions (+ visuals)")
     with st.container(border=True):
-        st.markdown("In my Ph.D, hidden structure-function relationships of biocompatible polysaccharides in successful cryoprotection were deeply explored, to unveil novel mechanistic rationales and challenge pre-established assumptions in cryobiology. Cryoprotective polysaccharides from cold-adapted microorganisms show an increased molecular weight, prominent negatively charged uronic acids and a particular incidence towards fucose in the polymer chain, which correlates experimentally with the compositional profile of the high-tier cryoprotectants in Vero cell cryopreservation. The key role of fucose appears connected, unlike uronic acids, to a charge-independent mechanism regulating cell membrane stabilization counteracting cytosolic volumetric fluctuations during freezing. Cryoprotective polysaccharides also possess an ordered structural conformation rather than random coil dispositions, allowing them to undergo a sol-gel transition at hypothermic temperatures. The generation of relative freezing point undercooling as an anticipation of crystal growth leads to smaller ice crystals and arises from a strong influence in ice nucleation, disrupting diffusive assembly of water molecules into stable ice nuclei. FucoPol in particular demonstrated an increased determinism in nucleation temperature distribution, which is associated with a reduction in nucleation stochasticity, enhanced experimental control, and proves beneficial in biopreservation protocol design. Lastly, the dual anti-nucleation and pro-nucleation effect of FucoPol, only intelligible from a temporal system evolution perspective, warranted the reformulation of Classical Nucleation Theory. The withstanding hypothesis is that the cryoprotective performance of FucoPol arises from the formation of a gel-like matrix which acts on both polysaccharide-ice and polysaccharide-cell interfaces, minimizing mechanical strain on the cell membrane and generating a volumetric confinement of water molecules enclosed in defined mesh pore sizes, which increases interfacial tension and promotes nucleation at first, but quenches larger nuclei from forming due to entropic effects, effectively inducing small crystal survivor bias.")
+        st.image("https://i.imgur.com/N74iMeP.jpg")
 
 with ds:
     st.header("Data Science")
@@ -191,19 +201,23 @@ with gd:
     st.caption(
         "Complex, accurate demonstrations are essential to convey messages that extend beyond the dimensions of written text. Scientific research in particular benefits"
         " immensely from reliable data visualization, proper color reporting, appropriate choice of graph types, easily interpretable representations during public speaking, "
-        "and illustrating very succintly the core results of research in a graphical abstract which often accompanies the publication of a scientific paper. This section demonstrates skills in:")
+        "and illustrating very succintly the core results of research in a graphical abstract which often accompanies the publication of a scientific paper.")
 
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1: st.info("Adobe Illustrator/Photoshop")
-    with col2: st.info("Photoscape X")
-    with col3: st.info("GraphPad Prism")
-    with col4: st.info("MS Powerpoint")
-    with col5: st.info("Artworking, Formatting, Panelling")
+    with st.container(border=True):
+        st.markdown("Skills demonstrated in this section:")
+        col1, col2, col3, col4, col5 = st.columns(5)
+        with col1: st.info("Adobe Illustrator")
+        with col2: st.info("Photoscape X")
+        with col3: st.info("GraphPad Prism")
+        with col4: st.info("MS Powerpoint")
+        with col5: st.info("Creative Content")
+
     # Multiselect for selecting chapters
     selected_chapters = st.selectbox("Select content to visualize:",
-                                       ["Pão Nosso news project",
+                                       ["Choose here...",
+                                        "Pão Nosso news project",
                                         "MDPI Polymers 2021 Best Cover Paper Award",
-                                        "Community-based game design"])
+                                        "Community Content Creation"])
 
     # Display the content of selected chapters
     if "Pão Nosso news project" in selected_chapters:
@@ -227,48 +241,53 @@ with gd:
         st.image("https://i.imgur.com/bC2pDzf.png")
 
     if "MDPI Polymers 2021 Best Cover Paper Award" in selected_chapters:
-        st.write("This is the content of Chapter 3.")
-    if "Community-based game design" in selected_chapters:
-        st.write("This is the content of Chapter 3.")
+        st.image("https://i.imgur.com/JyWJvs0.jpg")
+    if "Community Content Creation" in selected_chapters:
+        st.image("https://i.postimg.cc/c17KFZ2L/atc1.png")
+        st.image("https://i.postimg.cc/VLYJTpPB/atc2.png")
+        st.image("https://i.postimg.cc/fThcb8nJ/atc3.png")
+        st.image("https://i.postimg.cc/tTx6qxB3/atc4.png")
+        st.image("https://i.postimg.cc/SKj8P58t/atc5.png")
+        st.image("https://i.postimg.cc/wBb5THgp/atc6.png")
+
 
 with tw:
     st.header("Technical Writing")
     st.caption("Performing research in life sciences requires precision and thoroughness in experimental etiquette. However, proper documentation of findings and"
-               " description of equipment, systems and *modus operandi* is essential.")
+               " description of equipment, systems and *modus operandi* is essential. Here you can find some examples of technical writing, which required a thorough description"
+               "of hardware building, software writing, and methodologies to guarantee the reproducibility of research findings and insights.")
+
+    with st.container(border=True):
+        st.markdown("Skills demonstrated in this section:")
+        c1,c2,c3,c4 = st.columns(4)
+        c1.info("Technical Knowledge")
+        c2.info("Proofreading")
+        c3.info("Word / LaTeX")
 
     # Multiselect for selecting chapters
-    selected_chapters = st.multiselect("Select content to visualize:", ["Isochoric Nucleation Detection using Python-automated workflows",
-                                                                        "Principal Component Analysis revealed a distinct fucose mechanism in cryopreservation",
-                                                                        "Classical Nucleation Theory interactive energy landscapes",
-                                                                        "Multidimensional meta-analysis and extremophilic polysaccharide database generation"])
+    selected_chapters = st.multiselect("Select content to visualize:", ["Choose here...",
+                                                                        "Isochoric Nucleation Detection: Build, architecture, Python-automated workflows",
+                                                                        "Data Science tools applied to Life Sciences"])
 
     # Display the content of selected chapters
-    if "Isochoric Nucleation Detection using Python-automated workflows" in selected_chapters:
-        st.subheader("Isochoric Nucleation Detection using Python-automated workflows")
-        st.caption("The isochoric nucleation detection (INDe) device [3], used in our paper “Enhanced Control Over Ice Nucleation Stochasticity Using "
-                "a Carbohydrate Polymer Cryoprotectant”, published in a collaboration with Prof. Boris Rubinsky from the University of California-Berkeley (USA), "
-                "is a thermodynamic system that allows to detect the onset of ice nucleation by probing internal chamber pressure [4]. It allows for "
-                "high-throughput data collection due to an automated freeze-thaw cycling and real-time monitoring of multiple nucleation temperatures as a "
-                "time series. However, the raw data is obtained as a continuous function of pressure and temperature sensing over time, requiring manual "
-                "determination of the nucleation temperature, which corresponds to a peak in internal chamber pressure (strain transduced as an electrical "
-                "signal from the strain gauge). To automate the data collection phase, a personalized algorithm was built, which pre-processes the raw data, "
-                "collects the nucleation temperature of each freeze-thaw cycle, performs mathematical modelling in real time and plots updated data visualizations "
-                "(Scheme 1). This workflow was coded in Python, can be run in real-time with the INDe and provides paper-ready plots for scientific publishing. "
-                "The public version of this algorithm was released under a CC BY-NC 4.0 license.")
+    if "Isochoric Nucleation Detection: Build, architecture, Python-automated workflows" in selected_chapters:
+        st.markdown("#### Isochoric Nucleation Detection: Build, architecture, Python-automated workflows")
 
-        with open("./data/test.pdf", "rb") as f:
+        with open("./data/inde.pdf", "rb") as f:
                 base64_pdf = base64.b64encode(f.read()).decode('utf-8')
 
         pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="85%" height="800" style="display: block; margin: 0 auto;" type="application/pdf"></iframe>'
         st.markdown(pdf_display, unsafe_allow_html=True)
 
-    if "Principal Component Analysis revealed a distinct fucose mechanism in cryopreservation" in selected_chapters:
-        st.write("This is the content of Chapter 3.")
-    if "Classical Nucleation Theory interactive energy landscapes" in selected_chapters:
-        st.write("This is the content of Chapter 3.")
+    if "Data Science tools applied to Life Sciences" in selected_chapters:
+        st.markdown("#### Data Science tools applied to Life Sciences: scraping, loading, analysis, modelling, visualization")
 
-    if "Multidimensional meta-analysis and extremophilic polysaccharide database generation" in selected_chapters:
-        st.write("This is the content of Chapter 4.")
+        with open("./data/datasciencetools.pdf", "rb") as f:
+            base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+
+        pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="85%" height="800" style="display: block; margin: 0 auto;" type="application/pdf"></iframe>'
+        st.markdown(pdf_display, unsafe_allow_html=True)
+
 
 with proj:
     st.header("Projects")
@@ -280,7 +299,8 @@ with proj:
                                      ["Choose here...",
                                       "Crystal.AI Computer Vision Algorithm",
                                       "CryoPod",
-                                      "Isochoric Nucleation Detection"])
+                                      "Isochoric Nucleation Detection",
+                                      "Discord Bots"])
 
 with certs:
     c1_img, c1_text = st.columns([2,5])
@@ -392,53 +412,4 @@ with media:
     st.caption("During my career, I have participated in several outreach activities, out of excitement to communicate and teach what I'm passionate for. This involved volunteer lectures,"
                "ambassadorial participations, being interviewed for national newspapers and participating in podcasts. Find here the relevant media outreach where I was privileged to share my contributions so far.")
 
-with blog:
-    # Define the CSS styles for the hover effect
-    hover_css = """
-        <style>
-        .image-hover:hover {
-            transform: scale(1.1);
-            transition: transform 0.3s ease-in-out;
-        }
-        </style>
-        """
-
-    # Display the CSS styles
-    st.markdown(hover_css, unsafe_allow_html=True)
-
-    row1_left, row1_right = st.columns(2)
-    row2_left, row2_right = st.columns(2)
-    row3_left, row3_right = st.columns(2)
-
-    with row1_left:
-        st.markdown("""
-            This is the left column with justified text.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Pellentesque sit amet massa nec dolor tincidunt fringilla.
-            """)
-    with row1_right:
-        st.markdown('<img class="image-hover" src="https://via.placeholder.com/250x250" width="250">',
-                    unsafe_allow_html=True)
-
-    st.write("")  # SPACER
-
-    # Second row
-    with row2_left:
-        st.markdown('<img class="image-hover" src="https://via.placeholder.com/250x250" width="250">',
-                    unsafe_allow_html=True)
-
-    with row2_right:
-        st.markdown("""
-                Different text for the second row left column.
-                Some additional content here.
-                """)
-
-    # Third row
-    with row3_left:
-        st.markdown("""
-            And here is the text for the third row left column.
-            More details can be added as needed.
-            """)
-    with row3_right:
-        st.markdown('<img class="image-hover" src="https://via.placeholder.com/250x250" width="250">',
-                    unsafe_allow_html=True)
+    st.expander("'Organs with longer shelf-life', in print, Expresso journal")
