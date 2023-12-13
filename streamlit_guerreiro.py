@@ -8,7 +8,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import altair as alt
 from datetime import time, datetime # to simulate a real time data, time loop
-import matplotlib.pyplot as plt
 import seaborn as sns
 import base64
 from plotly.subplots import make_subplots
