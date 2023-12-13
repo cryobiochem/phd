@@ -1,17 +1,8 @@
 import streamlit as st  # 🎈 data web app development
 from streamlit_timeline import timeline
-from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
-import numpy as np  # generate numbers for functions
 import pandas as pd  # read csv, df manipulation
 import plotly.express as px  # interactive charts
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import altair as alt
-from datetime import time, datetime # to simulate a real time data, time loop
-import seaborn as sns
 import base64
-from plotly.subplots import make_subplots
-import math
 
 ### METADATA
 st.set_page_config(
