@@ -1,4 +1,0 @@
-plotly==5.9.0
-streamlit-aggrid==0.3.4.post3
-streamlit-timeline==0.0.2
-openpyxl==3.1.2
